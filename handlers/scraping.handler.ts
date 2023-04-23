@@ -22,6 +22,7 @@ export const handleProcessPdf = async (
       const browser = await puppeteer.launch();
       const page = await browser.newPage();
       await page.goto(baseURI);
+      /* istanbul ignore next */
       const data: PdfResult[] = await page.evaluate(
         (baseURI, SELECTOR) => {
           let result: PdfResult[] = [];
